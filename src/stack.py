@@ -20,9 +20,7 @@ class Stack:
 
     @property
     def top(self):
-        if self.__top is not None:
-            return self.__top
-        return None
+        return self.__top
 
     def push(self, data):
         """
