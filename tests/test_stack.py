@@ -6,12 +6,21 @@ class TestStack(unittest.TestCase):
 
     def test_pop(self):
         stack = Stack()
-        stack.push('1')
-        stack.push('2')
-        self.assertEqual(stack.pop(), '2')
+        stack.push('test1')
+        self.assertEqual(stack.pop(), 'test1')
 
-    def test_repr(self):
+    def test_top(self):
         stack = Stack()
-        stack.push('1')
-        stack.push('2')
-        self.assertEqual(stack.__repr__(), '1, 2')
+        stack.push('data1')
+        stack.pop()
+
+        assert stack.top is None
+
+        stack.push('data1')
+        stack.push('data2')
+        data = stack.pop()
+
+        assert stack.top.data == 'data1'
+        assert data == 'data2'
+
+
