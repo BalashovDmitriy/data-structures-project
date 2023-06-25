@@ -15,8 +15,9 @@ class Stack:
     """Класс для стека"""
 
     def __init__(self):
-        self.__top = None
         """Конструктор класса Stack"""
+        self.__top = None
+
 
     @property
     def top(self):
