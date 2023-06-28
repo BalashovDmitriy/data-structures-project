@@ -27,11 +27,13 @@ class Queue:
         """
         new_node = Node(data)
         self.tail = new_node
-        new_node.next_node = None
         if self.head is None:
             self.head = new_node
         elif self.head.next_node is None:
             self.head.next_node = self.tail
+        else:
+            self.head.next_node.next_node = self.tail
+
 
     def dequeue(self):
         """
@@ -43,7 +45,9 @@ class Queue:
 
     def __str__(self):
         """Магический метод для строкового представления объекта"""
-        if self.tail is None and self.head is None:
-            return ""
-        else:
-            return f"{self.head.data}\n{self.head.next_node.data}\n{self.tail.data}"
+        node = self.head
+        list_ = []
+        while node is not None:
+            list_.append(node.data)
+            node = node.next_node
+        return "\n".join(list_)
