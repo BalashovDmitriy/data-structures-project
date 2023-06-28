@@ -42,9 +42,10 @@ class Stack:
 
     def __str__(self):
         list_ = []
+        node = self.__top
         while True:
-            if self.__top is None:
+            if node is None:
                 return ", ".join(list_)
             else:
-                list_.append(self.__top.data)
-                self.pop()
+                list_.append(node.data)
+                node = node.next_node
