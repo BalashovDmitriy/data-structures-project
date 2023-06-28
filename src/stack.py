@@ -18,7 +18,6 @@ class Stack:
         """Конструктор класса Stack"""
         self.__top = None
 
-
     @property
     def top(self):
         return self.__top
@@ -41,3 +40,11 @@ class Stack:
         self.__top = self.__top.next_node
         return data
 
+    def __str__(self):
+        list_ = []
+        while True:
+            if self.__top is None:
+                return ", ".join(list_)
+            else:
+                list_.append(self.__top.data)
+                self.pop()
