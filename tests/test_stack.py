@@ -25,10 +25,13 @@ class TestStack(unittest.TestCase):
 
     def test_str(self):
         stack = Stack()
+
         self.assertEqual(str(stack), "")
+
         stack.push('data1')
         stack.push('data2')
         stack.push('data3')
         stack.push('data4')
         stack.push('data5')
+
         self.assertEqual(str(stack), "data5, data4, data3, data2, data1")

@@ -43,9 +43,7 @@ class Stack:
     def __str__(self):
         list_ = []
         node = self.__top
-        while True:
-            if node is None:
-                return ", ".join(list_)
-            else:
-                list_.append(node.data)
-                node = node.next_node
+        while node is not None:
+            list_.append(node.data)
+            node = node.next_node
+        return ", ".join(list_)
